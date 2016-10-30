@@ -1,7 +1,7 @@
 # @Author: Gao Bo
 # @Date:   2016-10-29T19:53:25-04:00
 # @Last modified by:   Gao Bo
-# @Last modified time: 2016-10-30T12:09:26-04:00
+# @Last modified time: 2016-10-30T12:11:43-04:00
 
 
 
@@ -44,7 +44,7 @@ def getBFTrends(sectionName, maxN=20, dumpHuman=False):
 
 if __name__ == '__main__':
     argc = len(sys.argv)
-    print(argc)
+    # print(argc)
     if argc == 1 or argc > 3:
         print ('''
         Usage:
