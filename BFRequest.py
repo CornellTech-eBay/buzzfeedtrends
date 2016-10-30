@@ -1,13 +1,14 @@
 # @Author: Gao Bo
 # @Date:   2016-10-29T19:53:25-04:00
 # @Last modified by:   Gao Bo
-# @Last modified time: 2016-10-29T21:05:39-04:00
+# @Last modified time: 2016-10-30T12:09:26-04:00
 
 
 
 import json
 import requests
 from collections import OrderedDict
+import sys
 
 urlprefix = 'https://www.buzzfeed.com/api/v2/feeds/'
 
@@ -42,9 +43,19 @@ def getBFTrends(sectionName, maxN=20, dumpHuman=False):
     return parsedBFTrends
 
 if __name__ == '__main__':
-    # parsedBFTrends = getBFTrends('trending')
-    parsedBFTrends = getBFTrends('life')
-    # print(parsedBFTrends)
+    argc = len(sys.argv)
+    print(argc)
+    if argc == 1 or argc > 3:
+        print ('''
+        Usage:
+        python BFRequest.py [sectionNum, maxN]
+        ''')
+        parsedBFTrends = getBFTrends('trending')
+        # parsedBFTrends = getBFTrends('life')
+    elif argc == 2:
+        parsedBFTrends = getBFTrends(sys.argv[1])
+    elif argc == 3:
+        parsedBFTrends = getBFTrends(sys.argv[1], int(sys.argv[2]))
 
     for buzz in parsedBFTrends:
         print(buzz['title'])
