@@ -1,7 +1,7 @@
 # @Author: Gao Bo
 # @Date:   2016-10-29T19:53:25-04:00
 # @Last modified by:   Gao Bo
-# @Last modified time: 2016-10-29T20:48:23-04:00
+# @Last modified time: 2016-10-29T21:05:39-04:00
 
 
 
@@ -35,6 +35,7 @@ def getBFTrends(sectionName, maxN=20, dumpHuman=False):
         tbuzz['category'] = buzz['category']
         tbuzz['id'] = buzz['id']
         tbuzz['published_date'] = buzz['published_date']
+        tbuzz['tags'] = buzz['tags']
         parsedBFTrends.append(tbuzz)
         if len(parsedBFTrends) >= maxN: break
 
